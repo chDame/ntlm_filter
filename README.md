@@ -1,7 +1,7 @@
 # NTLM SSO Filter
 
-This repository contains a project that should be compiled as a jar and used as a servlet filter for NTLM SSO 
-
+This repository contains a project that should be compiled as a jar and used as a servlet filter for NTLM authentication 
+(intialially developped for Bonita)
 
 ## How to use this jar
 
@@ -17,7 +17,7 @@ This repository contains a project that should be compiled as a jar and used as 
 ``` xml
     <filter>
         <filter-name>ntlmSsoFilter</filter-name>
-		<filter-class>org.bonitasoft.auth.NtlmSsoFilter</filter-class>
+	<filter-class>org.bonitasoft.auth.NtlmSsoFilter</filter-class>
     </filter>
     <filter-mapping>
         <filter-name>ntlmSsoFilter</filter-name>
