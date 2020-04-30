@@ -1,0 +1,42 @@
+plugins {
+	id 'org.springframework.boot' version '2.2.1.RELEASE'
+	id 'io.spring.dependency-management' version '1.0.8.RELEASE'
+	id 'java'
+}
+
+group = 'org.bonitasoft'
+version = '1.0.0'
+sourceCompatibility = '1.8'
+
+jar {
+	enabled = true
+    baseName = 'ntlm-sso-filter'
+    version =  '1.0.0'
+}
+bootJar {
+	enabled = false
+}
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter'
+    
+	compile fileTree(dir: 'libs', include: '*.jar')
+	
+	compileOnly "org.bonitasoft.engine:bonita-server:7.9.4"
+	compileOnly "org.bonitasoft.engine:bonita-engine-standalone:7.9.4"
+	compileOnly "org.bonitasoft.engine:bonita-common:7.9.4"
+	compileOnly "javax.servlet:servlet-api:2.5"
+	compile "com.fasterxml.jackson.core:jackson-core:2.9.0"
+	
+	testImplementation('org.springframework.boot:spring-boot-starter-test') {
+		exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
+	}
+}
+
+test {
+	useJUnitPlatform()
+}
